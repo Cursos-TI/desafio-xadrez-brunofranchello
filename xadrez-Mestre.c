@@ -68,37 +68,44 @@ void moverCavalo() {
         }
     }
 }
+
 void escolherPeca() {
     int opcao;
 
-    printf("Escolha a peça para movimentar:\n");
-    printf("1 - Bispo\n");
-    printf("2 - Torre\n");
-    printf("3 - Rainha\n");
-    printf("4 - Cavalo\n");
-    printf("Digite o número da peça: ");
-    scanf("%d", &opcao);
+    do {
+        printf("\nEscolha a peça para movimentar:\n");
+        printf("1 - Bispo\n");
+        printf("2 - Torre\n");
+        printf("3 - Rainha\n");
+        printf("4 - Cavalo\n");
+        printf("0 - Sair\n");
+        printf("Digite o número da peça: ");
+        scanf("%d", &opcao);
 
-    printf("\n");
+        printf("\n");
 
-    switch (opcao) {
-        case 1:
-            printf("Movimentação do Bispo:\n");
-            moverBispo(BISPO_MOV);
-            break;
-        case 2:
-            printf("Movimentação da Torre:\n");
-            moverTorre(TORRE_MOV);
-            break;
-        case 3:
-            printf("Movimentação da Rainha:\n");
-            moverRainha(RAINHA_MOV);
-            break;
-        case 4:
-            moverCavalo();
-            break;
-        default:
-            printf("Opção inválida. Tente novamente.\n");
-            break;
-    }
+        switch (opcao) {
+            case 1:
+                printf("Movimentação do Bispo:\n");
+                moverBispo(BISPO_MOV);
+                break;
+            case 2:
+                printf("Movimentação da Torre:\n");
+                moverTorre(TORRE_MOV);
+                break;
+            case 3:
+                printf("Movimentação da Rainha:\n");
+                moverRainha(RAINHA_MOV);
+                break;
+            case 4:
+                moverCavalo();
+                break;
+            case 0:
+                printf("Encerrando o programa...\n");
+                break;
+            default:
+                printf("Opção inválida. Tente novamente.\n");
+                break;
+        }
+    } while (opcao != 0); // Loop 
 }
