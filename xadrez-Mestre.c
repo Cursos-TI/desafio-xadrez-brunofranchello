@@ -81,6 +81,7 @@ void escolherPeca() {
         printf("0 - Sair\n");
         printf("Digite o número da peça: ");
         scanf("%d", &opcao);
+        while (getchar() != '\n'); // Limpar buffer para evitar loops no codigo, com isso não chega loops infinitos
 
         printf("\n");
 
