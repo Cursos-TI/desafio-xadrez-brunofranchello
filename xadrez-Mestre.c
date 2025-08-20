@@ -10,21 +10,15 @@ void moverBispo(int passos);
 void moverTorre(int passos);
 void moverRainha(int passos);
 void moverCavalo();
+void escolherPeca();
 
+// Main
 int main() {
-    printf("Movimentação do Bispo:\n");
-    moverBispo(BISPO_MOV);
-
-    printf("\nMovimentação da Torre:\n");
-    moverTorre(TORRE_MOV);
-
-    printf("\nMovimentação da Rainha:\n");
-    moverRainha(RAINHA_MOV);
-
-    moverCavalo();
+    escolherPeca(); // Chama o menu de escolha
 
     return 0;
 }
+
 
 // Função recursiva com loop aninhado para movimentar o Bispo (Cima + Direita)
 void moverBispo(int passos) {
@@ -72,5 +66,39 @@ void moverCavalo() {
             if (direita > 1) break;
             printf("Direita\n");
         }
+    }
+}
+void escolherPeca() {
+    int opcao;
+
+    printf("Escolha a peça para movimentar:\n");
+    printf("1 - Bispo\n");
+    printf("2 - Torre\n");
+    printf("3 - Rainha\n");
+    printf("4 - Cavalo\n");
+    printf("Digite o número da peça: ");
+    scanf("%d", &opcao);
+
+    printf("\n");
+
+    switch (opcao) {
+        case 1:
+            printf("Movimentação do Bispo:\n");
+            moverBispo(BISPO_MOV);
+            break;
+        case 2:
+            printf("Movimentação da Torre:\n");
+            moverTorre(TORRE_MOV);
+            break;
+        case 3:
+            printf("Movimentação da Rainha:\n");
+            moverRainha(RAINHA_MOV);
+            break;
+        case 4:
+            moverCavalo();
+            break;
+        default:
+            printf("Opção inválida. Tente novamente.\n");
+            break;
     }
 }
